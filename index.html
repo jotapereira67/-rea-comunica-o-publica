@@ -30,7 +30,8 @@
   --radio:  14px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-p,h1,h2,h3,h4,li,dd,dt,td,th{overflow-wrap:break-word;word-break:normal;hyphens:auto}
+p,li,dd,dt,td,th{overflow-wrap:break-word;word-break:normal;hyphens:auto}
+h1,h2,h3,h4,a{overflow-wrap:break-word;word-break:normal;hyphens:none}
 html{scroll-behavior:smooth;scroll-padding-top:74px}
 body{
   font-family:var(--fonte);background:var(--papel);color:var(--tinta);
@@ -240,12 +241,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;
    CONTRATAÇÃO (cap 4)
    ============================================================ */
 .contrat{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:8px}
-.cpasso{background:var(--papel-puro);border:1px solid var(--linha);
+.cpasso{background:var(--escuro);border:1px solid #333;
   border-radius:var(--radio);padding:24px 22px;position:relative}
-.cpasso .cn{font-weight:800;font-size:2.4rem;color:#f0ede8;
+.cpasso .cn{font-weight:800;font-size:2.4rem;color:var(--vermelho);
   letter-spacing:-.04em;line-height:.8;margin-bottom:6px}
-.cpasso h4{font-weight:700;font-size:1.05rem;margin-bottom:8px;letter-spacing:-.01em}
-.cpasso p{font-size:.91rem;line-height:1.5}
+.cpasso h4{font-weight:700;font-size:1.05rem;margin-bottom:8px;letter-spacing:-.01em;color:#fff}
+.cpasso p{font-size:.91rem;line-height:1.5;color:#bdb9b2}
 
 .tabela-leg{margin-top:44px;width:100%;border-collapse:collapse;
   background:var(--papel-puro);border-radius:var(--radio);overflow:hidden;
@@ -371,6 +372,7 @@ footer{background:var(--escuro);color:#bdb9b2;padding:60px 0 36px}
   .passo{display:grid;grid-template-columns:54px 1fr;gap:16px;
     align-items:start;padding:0;width:100%}
   .passo .bola{margin-bottom:0}
+  .passo p{grid-column:2}
   .passo:not(:last-child)::after{display:none}
   .frentes{grid-template-columns:1fr}
   .entregas{grid-template-columns:1fr}
