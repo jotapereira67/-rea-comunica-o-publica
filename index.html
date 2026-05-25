@@ -30,6 +30,7 @@
   --radio:  14px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
+p,h1,h2,h3,h4,li,dd,dt,td,th{overflow-wrap:break-word;word-break:normal;hyphens:auto}
 html{scroll-behavior:smooth;scroll-padding-top:74px}
 body{
   font-family:var(--fonte);background:var(--papel);color:var(--tinta);
@@ -367,8 +368,8 @@ footer{background:var(--escuro);color:#bdb9b2;padding:60px 0 36px}
   .trilha{grid-template-columns:repeat(3,1fr)}
   .stats{grid-template-columns:repeat(2,1fr)}
   .fluxo{grid-template-columns:1fr;gap:12px}
-  .passo{display:grid;grid-template-columns:50px 1fr;gap:16px;
-    align-items:start;padding:0}
+  .passo{display:grid;grid-template-columns:54px 1fr;gap:16px;
+    align-items:start;padding:0;width:100%}
   .passo .bola{margin-bottom:0}
   .passo:not(:last-child)::after{display:none}
   .frentes{grid-template-columns:1fr}
