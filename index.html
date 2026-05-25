@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agência digital na comunicação pública — Área Comunicação</title>
+<meta name="description" content="O que é, o que faz e como contratar uma agência de comunicação digital no setor público. Material de orientação a gestores, pela Área Comunicação.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   SISTEMA DE DESIGN — edite tudo aqui
+   ============================================================ */
+:root{
+  --vermelho:        #e30613;
+  --vermelho-escuro: #b30410;
+  --vermelho-claro:  #ff5862;
+  --tinta:           #1a1a1a;
+  --tinta-suave:     #4a4a4a;
+  --cinza:           #8a8a8a;
+  --linha:           #e6e3de;
+  --papel:           #faf8f5;
+  --papel-puro:      #ffffff;
+  --escuro:          #1a1a1a;
+  --escuro-card:     #262626;
+  --fonte: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+  --max:    1180px;
+  --gap:    clamp(58px, 8vw, 130px);
+  --radio:  14px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:74px}
+body{
+  font-family:var(--fonte);background:var(--papel);color:var(--tinta);
+  line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+svg{display:block}
+
+/* ---- Tipos utilitários ---- */
+.eyebrow{font-style:italic;font-weight:500;font-size:.95rem;color:var(--vermelho);margin-bottom:14px}
+.eyebrow.claro{color:var(--vermelho-claro)}
+h2{font-weight:800;line-height:1.08;letter-spacing:-.022em;
+  font-size:clamp(1.85rem,4.6vw,3.3rem);margin-bottom:26px}
+h3{font-weight:700;line-height:1.18;letter-spacing:-.015em;
+  font-size:clamp(1.2rem,2vw,1.55rem);margin-bottom:14px}
+p{font-weight:400;font-size:1.05rem;color:var(--tinta-suave)}
+.lead{font-size:1.16rem;color:var(--tinta);font-weight:400;max-width:62ch}
+strong{font-weight:600;color:var(--tinta)}
+.tarja{background:var(--vermelho);color:#fff;padding:.03em .26em;
+  box-decoration-break:clone;-webkit-box-decoration-break:clone}
+
+/* ============================================================
+   NAVEGAÇÃO
+   ============================================================ */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(250,248,245,.94);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--linha)}
+.nav-in{max-width:var(--max);margin:0 auto;padding:0 28px;
+  height:74px;display:flex;align-items:center;justify-content:space-between}
+.marca{display:flex;align-items:center;gap:11px;text-decoration:none;flex-shrink:0}
+.marca img{width:40px;height:40px}
+.marca .nome{font-weight:600;font-size:.98rem;letter-spacing:-.01em;color:var(--tinta);line-height:1.2}
+.marca .nome b{color:var(--vermelho);font-weight:700}
+.menu{display:flex;gap:4px;list-style:none}
+.menu a{text-decoration:none;font-weight:500;font-size:.9rem;
+  padding:9px 13px;border-radius:8px;color:var(--tinta-suave);
+  transition:background .15s,color .15s}
+.menu a:hover{background:#efece7;color:var(--tinta)}
+.menu a.ativo{color:var(--vermelho);font-weight:600}
+.burger{display:none;background:none;border:0;cursor:pointer;padding:8px}
+.burger span{display:block;width:24px;height:2.4px;background:var(--tinta);
+  margin:5px 0;border-radius:2px;transition:.25s}
+
+/* ============================================================
+   SEÇÕES
+   ============================================================ */
+.secao{padding:var(--gap) 0}
+.secao.branca{background:var(--papel-puro)}
+.secao.escura{background:var(--escuro);color:#efece7}
+.secao.escura h2,.secao.escura h3{color:#fff}
+.secao.escura p,.secao.escura .cabeca p{color:#bdb9b2}
+.secao.escura .lead{color:#e8e5df}
+.secao.escura strong{color:#fff}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+.cabeca{max-width:760px;margin-bottom:50px}
+.cabeca p{margin-top:18px}
+
+/* nome do capítulo (substitui "Capítulo 01") */
+.cap-rotulo{
+  display:inline-flex;align-items:center;gap:10px;
+  font-weight:700;font-size:.8rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--vermelho);margin-bottom:18px;
+}
+.cap-rotulo::before{
+  content:"";width:30px;height:2.5px;background:var(--vermelho);border-radius:2px;
+}
+
+/* ============================================================
+   CAPA / HERO
+   ============================================================ */
+.hero{padding:130px 0 var(--gap);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-140px;right:-180px;
+  width:620px;height:620px;border-radius:50%;
+  background:repeating-radial-gradient(circle,transparent 0 17px,rgba(0,0,0,.04) 17px 18px);
+  pointer-events:none}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.45fr .8fr;
+  gap:40px;align-items:center}
+.hero-tag{font-style:italic;font-weight:500;color:var(--vermelho);
+  font-size:1rem;margin-bottom:20px}
+.hero h1{font-weight:800;letter-spacing:-.03em;line-height:1.02;
+  font-size:clamp(2.5rem,6vw,4.9rem);max-width:15ch}
+.hero h1 .tarja{display:inline-block;margin-top:.06em}
+.hero .sub{font-size:clamp(1.05rem,1.6vw,1.28rem);color:var(--tinta-suave);
+  max-width:54ch;margin-top:24px;line-height:1.55}
+.hero .entrada{margin-top:26px;max-width:58ch;font-size:1.05rem;color:var(--tinta-suave)}
+.hero .mini-nota{margin-top:26px;font-style:italic;font-weight:500;
+  color:var(--cinza);font-size:.92rem;
+  padding-left:14px;border-left:3px solid var(--linha)}
+.hero-ilustra{display:flex;align-items:center;justify-content:center}
+.hero-ilustra svg{width:100%;max-width:320px;height:auto}
+
+.trilha{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;
+  margin-top:54px;grid-column:1 / -1}
+.trilha a{text-decoration:none;background:var(--papel-puro);
+  border:1px solid var(--linha);border-radius:var(--radio);
+  padding:16px 14px;transition:transform .18s,box-shadow .18s,border-color .18s}
+.trilha a:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(0,0,0,.08);
+  border-color:#d8d4cd}
+.trilha .t-n{font-weight:700;color:var(--vermelho);font-size:.78rem;letter-spacing:.1em}
+.trilha .t-l{font-weight:600;font-size:.93rem;margin-top:7px;line-height:1.25;letter-spacing:-.01em}
+
+/* ============================================================
+   ESTATÍSTICAS (cap 1)
+   ============================================================ */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:8px}
+.stat{background:var(--escuro-card);border-radius:var(--radio);
+  padding:28px 22px;position:relative;overflow:hidden}
+.stat::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:3px;
+  background:var(--vermelho)}
+.stat .num{font-weight:800;font-size:clamp(2.1rem,3.2vw,2.8rem);
+  color:#fff;letter-spacing:-.03em;line-height:1}
+.stat .num .un{font-size:.5em;font-weight:600;color:var(--vermelho-claro)}
+.stat .txt{margin-top:11px;font-size:.93rem;color:#bdb9b2;line-height:1.4}
+/* destaque para dados digitais/redes — vermelho */
+.stat.realce{background:linear-gradient(160deg,#3a0608,#1c0203);
+  box-shadow:0 0 0 1.5px var(--vermelho) inset}
+.stat.realce .num{color:var(--vermelho-claro)}
+.stat.realce .num .un{color:#fff}
+.stat.realce .txt{color:#e9c9cb}
+.stat.realce::after{height:4px}
+.fonte-nota{margin-top:24px;font-size:.84rem;color:#7a7770;font-style:italic}
+
+/* ============================================================
+   FLUXO 5 PASSOS (cap 1)
+   ============================================================ */
+.fluxo{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:8px}
+.passo{position:relative;padding:0 16px}
+.passo:not(:last-child)::after{content:"";position:absolute;right:-7px;top:24px;
+  width:14px;height:14px;border-top:2.5px solid var(--vermelho);
+  border-right:2.5px solid var(--vermelho);transform:rotate(45deg);z-index:2}
+.passo .bola{width:50px;height:50px;border-radius:14px;
+  background:var(--vermelho);color:#fff;display:flex;align-items:center;
+  justify-content:center;font-weight:800;font-size:1.2rem;margin-bottom:16px}
+.passo h4{font-weight:700;font-size:1.02rem;margin-bottom:7px;letter-spacing:-.01em}
+.passo p{font-size:.91rem;line-height:1.5}
+
+.fechamento{margin-top:42px;background:var(--papel-puro);
+  border:1px solid var(--linha);border-left:4px solid var(--vermelho);
+  border-radius:var(--radio);padding:24px 28px}
+.fechamento .rot{font-weight:700;color:var(--vermelho);font-size:.82rem;
+  letter-spacing:.1em;margin-bottom:7px}
+.fechamento p{font-size:1.05rem;color:var(--tinta)}
+.secao.escura .fechamento{background:var(--escuro-card);border-color:#3a3a3a;
+  border-left-color:var(--vermelho)}
+.secao.escura .fechamento p{color:#fff}
+
+/* ============================================================
+   TRÊS FRENTES com ícones (cap 2)
+   ============================================================ */
+.frentes{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:8px}
+.frente{background:var(--papel-puro);border:1px solid var(--linha);
+  border-radius:var(--radio);padding:30px 26px;
+  transition:transform .18s,box-shadow .18s}
+.frente:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(0,0,0,.07)}
+.frente .ic-wrap{width:62px;height:62px;border-radius:16px;background:#fdeaeb;
+  display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.frente .ic-wrap svg{width:34px;height:34px}
+
+.entregas{display:grid;grid-template-columns:1fr 1fr;gap:14px 28px;margin-top:8px}
+.entrega{display:flex;gap:14px;padding:16px 0;border-top:1px solid var(--linha)}
+.entrega .ic-e{flex-shrink:0;width:42px;height:42px;border-radius:11px;
+  background:#fdeaeb;display:flex;align-items:center;justify-content:center}
+.entrega .ic-e svg{width:24px;height:24px}
+.entrega h4{font-weight:600;font-size:1.01rem;margin-bottom:3px}
+.entrega p{font-size:.92rem;line-height:1.45}
+
+.destaque-bloco{margin-top:38px;background:var(--escuro);color:#fff;
+  border-radius:var(--radio);padding:36px 40px;
+  display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center}
+.destaque-bloco .db-ic{width:78px;height:78px;flex-shrink:0}
+.destaque-bloco .rot{font-style:italic;color:var(--vermelho-claro);
+  font-weight:500;margin-bottom:10px}
+.destaque-bloco p{color:#dedad3;font-size:1.08rem}
+.destaque-bloco strong{color:#fff}
+
+/* ============================================================
+   DUAS FUNÇÕES (cap 3)
+   ============================================================ */
+.duas{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:8px}
+.func{background:var(--papel-puro);border:1px solid var(--linha);
+  border-radius:var(--radio);padding:32px 30px}
+.func .selo{display:inline-block;font-weight:700;font-size:.76rem;
+  letter-spacing:.12em;padding:6px 13px;border-radius:30px;margin-bottom:16px}
+.func.pub .selo{background:#f0ede8;color:var(--tinta-suave)}
+.func.dig .selo{background:var(--vermelho);color:#fff}
+.func h3{font-size:1.45rem}
+.func .desc{font-size:.98rem;color:var(--tinta-suave);margin-bottom:20px}
+.func dl{display:grid;gap:13px}
+.func dt{font-weight:700;font-size:.78rem;letter-spacing:.07em;
+  color:var(--vermelho);margin-bottom:2px}
+.func dd{font-size:.95rem;color:var(--tinta-suave);line-height:1.5}
+.linha-corte{margin-top:24px;background:var(--escuro);color:#fff;
+  border-radius:var(--radio);padding:32px 36px;text-align:center}
+.linha-corte .rot{font-style:italic;color:var(--vermelho-claro);
+  font-weight:500;font-size:.93rem;margin-bottom:10px}
+.linha-corte .frase{font-weight:700;font-size:clamp(1.25rem,2.4vw,1.8rem);
+  letter-spacing:-.02em;line-height:1.25}
+.linha-corte p{color:#bdb9b2;margin-top:14px;max-width:64ch;
+  margin-left:auto;margin-right:auto}
+.coexistem{margin-top:22px;border:1px solid var(--linha);
+  border-radius:var(--radio);padding:26px 30px;background:var(--papel-puro)}
+.coexistem p{font-size:1.04rem;color:var(--tinta)}
+
+/* ============================================================
+   CONTRATAÇÃO (cap 4)
+   ============================================================ */
+.contrat{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:8px}
+.cpasso{background:var(--papel-puro);border:1px solid var(--linha);
+  border-radius:var(--radio);padding:24px 22px;position:relative}
+.cpasso .cn{font-weight:800;font-size:2.4rem;color:#f0ede8;
+  letter-spacing:-.04em;line-height:.8;margin-bottom:6px}
+.cpasso h4{font-weight:700;font-size:1.05rem;margin-bottom:8px;letter-spacing:-.01em}
+.cpasso p{font-size:.91rem;line-height:1.5}
+
+.tabela-leg{margin-top:44px;width:100%;border-collapse:collapse;
+  background:var(--papel-puro);border-radius:var(--radio);overflow:hidden;
+  border:1px solid var(--linha)}
+.tabela-leg thead{background:var(--escuro)}
+.tabela-leg th{text-align:left;padding:15px 20px;color:#fff;font-weight:600;
+  font-size:.8rem;letter-spacing:.06em;text-transform:uppercase}
+.tabela-leg td{padding:16px 20px;border-top:1px solid var(--linha);
+  font-size:.95rem;vertical-align:top;color:var(--tinta-suave)}
+.tabela-leg tr td:first-child{font-weight:600;color:var(--tinta)}
+.tabela-leg .lei{font-weight:600;color:var(--vermelho);font-size:.91rem}
+.regra-pratica{margin-top:24px;display:flex;gap:16px;align-items:flex-start;
+  background:#fdeaeb;border-radius:var(--radio);padding:22px 26px}
+.regra-pratica .rp-ic{flex-shrink:0;width:36px;height:36px}
+.regra-pratica p{color:var(--tinta);font-size:1.01rem}
+
+.tec-preco{margin-top:52px;background:var(--escuro);color:#fff;
+  border-radius:var(--radio);padding:42px 44px}
+.tec-preco h3{color:#fff;font-size:1.55rem;max-width:26ch}
+.tec-preco p{color:#bdb9b2;margin-top:15px;max-width:66ch}
+.tec-preco .grande{font-weight:800;font-size:clamp(1.4rem,3vw,2.1rem);
+  letter-spacing:-.02em;color:#fff;margin:22px 0 8px;line-height:1.2}
+.tec-preco .grande .tarja{display:inline-block}
+
+/* ============================================================
+   VANTAGENS (cap 5)
+   ============================================================ */
+.comp-cab{display:grid;grid-template-columns:190px 1fr 1fr;
+  margin-bottom:4px;padding:0 24px}
+.comp-cab span{font-weight:700;font-size:.76rem;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--cinza)}
+.comp-cab span:nth-child(3){color:var(--vermelho)}
+.compara{display:grid;gap:12px;margin-top:8px}
+.linha-comp{display:grid;grid-template-columns:190px 1fr 1fr;
+  background:var(--papel-puro);border:1px solid var(--linha);
+  border-radius:var(--radio);overflow:hidden}
+.linha-comp .aspecto{padding:20px 22px;font-weight:700;font-size:1rem;
+  background:#f4f1ec;display:flex;align-items:center;letter-spacing:-.01em}
+.linha-comp .sem,.linha-comp .com{padding:20px 22px;font-size:.93rem;line-height:1.5}
+.linha-comp .sem{color:var(--cinza);border-left:1px solid var(--linha)}
+.linha-comp .com{color:var(--tinta);border-left:3px solid var(--vermelho);
+  background:#fffdfb}
+.servir{margin-top:32px;text-align:center}
+.servir .frase{font-weight:800;font-size:clamp(1.5rem,3.4vw,2.5rem);
+  letter-spacing:-.025em}
+.erros{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px}
+.erro{display:flex;gap:16px;background:var(--papel-puro);
+  border:1px solid var(--linha);border-radius:var(--radio);padding:22px 24px}
+.erro .x{flex-shrink:0;width:32px;height:32px;border-radius:8px;
+  background:var(--vermelho);color:#fff;font-weight:700;font-size:1.05rem;
+  display:flex;align-items:center;justify-content:center}
+.erro h4{font-weight:700;font-size:1.02rem;margin-bottom:5px;letter-spacing:-.01em}
+.erro p{font-size:.92rem;line-height:1.5}
+
+/* ============================================================
+   FONTES (cap 6)
+   ============================================================ */
+.aviso-fonte{display:flex;gap:16px;align-items:flex-start;
+  background:#fdeaeb;border-radius:var(--radio);padding:24px 28px;margin-bottom:34px}
+.aviso-fonte .av-ic{flex-shrink:0;width:36px;height:36px}
+.aviso-fonte p{color:var(--tinta);font-size:1rem}
+.grupo-fonte{margin-bottom:30px}
+.grupo-fonte h3{font-size:1.08rem;color:var(--vermelho);
+  border-bottom:2px solid var(--linha);padding-bottom:10px;margin-bottom:4px}
+.link-fonte{display:flex;justify-content:space-between;align-items:center;
+  gap:20px;padding:18px 0;border-bottom:1px solid var(--linha);
+  text-decoration:none;transition:padding-left .15s}
+.link-fonte:hover{padding-left:8px}
+.link-fonte .lf-txt h4{font-weight:600;font-size:1.03rem;margin-bottom:3px}
+.link-fonte .lf-txt p{font-size:.91rem}
+.link-fonte .seta{flex-shrink:0;width:40px;height:40px;border-radius:50%;
+  border:1.5px solid var(--linha);display:flex;align-items:center;
+  justify-content:center;color:var(--vermelho);transition:background .15s,border-color .15s}
+.link-fonte .seta svg{width:17px;height:17px}
+.link-fonte:hover .seta{background:var(--vermelho);border-color:var(--vermelho);color:#fff}
+.pendente{font-size:.76rem;font-style:italic;color:var(--cinza);
+  background:#f0ede8;padding:3px 9px;border-radius:20px;white-space:nowrap}
+.cta-fontes{margin-top:30px;background:var(--escuro);border-radius:var(--radio);
+  padding:32px 36px;display:flex;justify-content:space-between;
+  align-items:center;gap:24px;flex-wrap:wrap}
+.cta-fontes .ct-txt h3{color:#fff;font-size:1.2rem;margin-bottom:5px}
+.cta-fontes .ct-txt p{color:#bdb9b2;font-size:.95rem}
+.cta-fontes a{flex-shrink:0;background:var(--vermelho);color:#fff;
+  text-decoration:none;font-weight:600;font-size:.96rem;
+  padding:14px 26px;border-radius:30px;transition:background .15s}
+.cta-fontes a:hover{background:var(--vermelho-escuro)}
+
+/* ============================================================
+   RODAPÉ
+   ============================================================ */
+footer{background:var(--escuro);color:#bdb9b2;padding:60px 0 36px}
+.foot-top{display:flex;justify-content:space-between;gap:40px;
+  flex-wrap:wrap;padding-bottom:34px;border-bottom:1px solid #333}
+.foot-marca img{width:64px;height:64px;margin-bottom:14px}
+.foot-marca h3{color:#fff;font-size:1.15rem;margin-bottom:8px}
+.foot-marca p{font-size:.93rem;max-width:42ch}
+.foot-cont{font-size:.93rem;line-height:1.9}
+.foot-cont a{color:var(--vermelho-claro);text-decoration:none}
+.foot-cont a:hover{text-decoration:underline}
+.foot-base{padding-top:26px;font-size:.83rem;color:#777;
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+/* ============================================================
+   ANIMAÇÃO
+   ============================================================ */
+.reveal{opacity:0;transform:translateY(24px);
+  transition:opacity .7s ease,transform .7s ease}
+.reveal.vis{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+}
+
+/* ============================================================
+   RESPONSIVO  — atenção redobrada ao mobile
+   ============================================================ */
+@media(max-width:980px){
+  .hero .wrap{grid-template-columns:1fr}
+  .hero-ilustra{order:-1;max-width:260px;margin-bottom:8px}
+  .trilha{grid-template-columns:repeat(3,1fr)}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .fluxo{grid-template-columns:1fr;gap:12px}
+  .passo{display:grid;grid-template-columns:50px 1fr;gap:16px;
+    align-items:start;padding:0}
+  .passo .bola{margin-bottom:0}
+  .passo:not(:last-child)::after{display:none}
+  .frentes{grid-template-columns:1fr}
+  .entregas{grid-template-columns:1fr}
+  .destaque-bloco{grid-template-columns:1fr;gap:18px;text-align:left}
+  .destaque-bloco .db-ic{width:64px;height:64px}
+  .duas{grid-template-columns:1fr}
+  .contrat{grid-template-columns:1fr 1fr}
+  .erros{grid-template-columns:1fr}
+  .comp-cab{display:none}
+  .linha-comp{grid-template-columns:1fr}
+  .linha-comp .sem,.linha-comp .com{border-left:0;border-top:1px solid var(--linha)}
+  .linha-comp .sem::before{content:"Sem estrutura — ";font-weight:700;color:var(--cinza)}
+  .linha-comp .com::before{content:"Com agência digital — ";font-weight:700;color:var(--vermelho)}
+}
+@media(max-width:680px){
+  :root{--gap:clamp(48px,11vw,80px)}
+  .menu{display:none;position:absolute;top:74px;left:0;right:0;
+    flex-direction:column;background:var(--papel);
+    border-bottom:1px solid var(--linha);padding:12px 18px;gap:2px;
+    box-shadow:0 16px 30px rgba(0,0,0,.08)}
+  .menu.aberto{display:flex}
+  .menu a{padding:13px 12px;border-radius:8px;font-size:.98rem}
+  .burger{display:block}
+  .nav-in{padding:0 18px}
+  .marca .nome{font-size:.86rem}
+  .wrap{padding:0 18px}
+  .trilha{grid-template-columns:1fr 1fr;gap:10px;margin-top:42px}
+  .stats{grid-template-columns:1fr}
+  .contrat{grid-template-columns:1fr}
+  .hero{padding-top:104px}
+  .hero h1{font-size:clamp(2.1rem,9vw,3rem)}
+  .tabela-leg thead{display:none}
+  .tabela-leg td{display:block;border-top:0;padding:4px 18px}
+  .tabela-leg tr{display:block;border-top:1px solid var(--linha);padding:12px 0}
+  .tabela-leg tr td:first-child{font-size:1.08rem;padding-top:8px}
+  .tabela-leg td:nth-child(2)::before{content:"";display:block}
+  .tabela-leg .lei{display:inline-block;margin-top:4px}
+  .tec-preco,.cta-fontes,.destaque-bloco,.linha-corte{padding-left:24px;padding-right:24px}
+  .link-fonte{flex-wrap:wrap;gap:10px}
+  .link-fonte .seta{order:2}
+  .pendente{order:3}
+  .foot-top,.foot-base{flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== NAVEGAÇÃO ===================== -->
+<nav>
+  <div class="nav-in">
+    <a href="#topo" class="marca">
+      <img src="data:image/png;base64,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" alt="Área Comunicação">
+      <span class="nome">Comunicação <b>digital</b><br>na gestão pública</span>
+    </a>
+    <ul class="menu" id="menu">
+      <li><a href="#contexto">Contexto</a></li>
+      <li><a href="#o-que-e">O que é</a></li>
+      <li><a href="#publicidade-digital">Publicidade e Digital</a></li>
+      <li><a href="#como-contratar">Como contratar</a></li>
+      <li><a href="#vantagens">Vantagens</a></li>
+      <li><a href="#fontes">Fontes</a></li>
+    </ul>
+    <button class="burger" id="burger" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ===================== CAPA ===================== -->
+<header class="hero" id="topo">
+  <div class="wrap">
+    <div class="hero-texto">
+      <p class="hero-tag">Material de orientação a gestores públicos</p>
+      <h1>Agência digital na <span class="tarja">comunicação</span> pública</h1>
+      <p class="sub">O que é, o que faz e como contratar — um guia para quem precisa
+         levar a comunicação da sua gestão ao ambiente onde o cidadão já está.</p>
+      <p class="entrada">
+        Comunicar deixou de ser um anexo da gestão pública. É parte do serviço.
+        Quando a informação oficial não chega com clareza, sobra espaço para o
+        boato — e o cidadão decide com base no que encontrar primeiro. Este material
+        foi escrito para o gestor que reconhece a necessidade de uma comunicação
+        digital estruturada e quer entender, sem rodeios, como contratá-la dentro
+        da lei.
+      </p>
+    </div>
+    <div class="hero-ilustra">
+      <!-- ilustração: megafone (estilo Área) -->
+      <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="150" cy="150" r="142" fill="#fdeaeb"/>
+        <g transform="rotate(-18 150 150)">
+          <path d="M70 130 L70 170 L110 170 L200 215 L200 85 L110 130 Z" fill="#1a1a1a"/>
+          <path d="M110 130 L200 85 L200 215 L110 170 Z" fill="#e30613"/>
+          <rect x="58" y="130" width="20" height="40" rx="6" fill="#1a1a1a"/>
+          <path d="M118 170 L118 205 Q118 220 133 220 L150 220 L150 178 Z" fill="#1a1a1a"/>
+          <ellipse cx="165" cy="150" rx="12" ry="30" fill="#fff" opacity=".9"/>
+          <g stroke="#1a1a1a" stroke-width="8" stroke-linecap="round">
+            <line x1="222" y1="150" x2="250" y2="150"/>
+            <line x1="216" y1="110" x2="240" y2="92"/>
+            <line x1="216" y1="190" x2="240" y2="208"/>
+          </g>
+        </g>
+      </svg>
+    </div>
+    <div class="trilha">
+      <a href="#contexto"><div class="t-n">01</div><div class="t-l">Contexto</div></a>
+      <a href="#o-que-e"><div class="t-n">02</div><div class="t-l">O que é</div></a>
+      <a href="#publicidade-digital"><div class="t-n">03</div><div class="t-l">Publicidade e Digital</div></a>
+      <a href="#como-contratar"><div class="t-n">04</div><div class="t-l">Como contratar</div></a>
+      <a href="#vantagens"><div class="t-n">05</div><div class="t-l">Vantagens</div></a>
+      <a href="#fontes"><div class="t-n">06</div><div class="t-l">Fontes</div></a>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== CONTEXTO ===================== -->
+<section class="secao escura" id="contexto">
+  <div class="wrap">
+    <div class="cabeca reveal">
+      <span class="cap-rotulo">Contexto</span>
+      <h2>O cidadão já está no digital</h2>
+      <p class="lead">A pergunta não é mais se a prefeitura deve comunicar no ambiente
+        digital. O cidadão já decidiu por ela. Hoje, a maior parte da população busca,
+        compara e cobra informação na tela do celular — e espera que a informação
+        pública esteja lá, no mesmo lugar e no mesmo tempo.</p>
+    </div>
+
+    <div class="stats reveal">
+      <div class="stat realce">
+        <div class="num">183<span class="un"> mi</span></div>
+        <div class="txt">brasileiros usam internet</div>
+      </div>
+      <div class="stat realce">
+        <div class="num">144<span class="un"> mi</span></div>
+        <div class="txt">de identidades ativas em redes sociais</div>
+      </div>
+      <div class="stat">
+        <div class="num">84<span class="un">%</span></div>
+        <div class="txt">da população é usuária da rede — 89% no indicador ampliado</div>
+      </div>
+      <div class="stat">
+        <div class="num">99<span class="un">%</span></div>
+        <div class="txt">de quem acessa a internet o faz pelo celular</div>
+      </div>
+    </div>
+    <p class="fonte-nota reveal">Fontes: DataReportal — Digital 2025: Brazil ·
+       Cetic.br / NIC.br — TIC Domicílios 2024.</p>
+
+    <div class="fechamento reveal" style="margin-top:38px">
+      <div class="rot">A LEITURA QUE IMPORTA</div>
+      <p>Se a população vive no ambiente digital, a comunicação da prefeitura precisa
+        viver nesse ambiente também. Não como presença simbólica — <strong>como
+        serviço</strong>.</p>
+    </div>
+
+    <div class="cabeca reveal" style="margin-top:78px;margin-bottom:38px">
+      <h2>Como a informação pública circula hoje</h2>
+      <p class="lead">O percurso de uma informação da prefeitura até o cidadão
+        acontece rápido e quase sempre na mesma ordem.</p>
+    </div>
+
+    <div class="fluxo reveal">
+      <div class="passo">
+        <div class="bola">1</div>
+        <h4>Acontece um fato</h4>
+        <p>Uma obra, uma campanha de saúde, uma mudança em um serviço — algo passa
+           a interessar à população.</p>
+      </div>
+      <div class="passo">
+        <div class="bola">2</div>
+        <h4>O cidadão vê no celular</h4>
+        <p>O primeiro contato raramente é o portal oficial. É uma rede social, uma
+           mensagem encaminhada, uma busca.</p>
+      </div>
+      <div class="passo">
+        <div class="bola">3</div>
+        <h4>Procura confirmação</h4>
+        <p>Quer saber se é verdade, e onde está a versão oficial.</p>
+      </div>
+      <div class="passo">
+        <div class="bola">4</div>
+        <h4>Reage</h4>
+        <p>Comenta, pergunta, compartilha, cobra explicação — e o faz publicamente.</p>
+      </div>
+      <div class="passo">
+        <div class="bola">5</div>
+        <h4>A prefeitura responde</h4>
+        <p>É aqui que a informação oficial organiza o que estava disperso e reduz
+           o ruído.</p>
+      </div>
+    </div>
+
+    <div class="fechamento reveal">
+      <div class="rot">O PONTO CENTRAL</div>
+      <p>Quem responde melhor nesse fluxo comunica melhor. A confiança do cidadão
+        na gestão se constrói — ou se perde — na <strong>velocidade e na clareza
+        dessa resposta</strong>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== O QUE É ===================== -->
+<section class="secao branca" id="o-que-e">
+  <div class="wrap">
+    <div class="cabeca reveal">
+      <span class="cap-rotulo">O que é</span>
+      <h2>O que é uma agência de comunicação digital</h2>
+      <p class="lead">Uma agência de comunicação digital é uma empresa especializada
+        em operar a comunicação de um órgão público nos canais digitais — de forma
+        contínua, técnica e mensurável.</p>
+      <p>A palavra-chave é <strong>contínua</strong>. Não se trata de uma campanha
+        pontual, mas da rotina diária de uma comunicação que não para: o cidadão
+        pergunta no domingo, o boato circula à noite, o serviço muda na segunda.
+        A agência digital existe para sustentar essa operação todos os dias.</p>
+    </div>
+
+    <div class="frentes reveal">
+      <div class="frente">
+        <div class="ic-wrap">
+          <!-- ícone: bússola/planejamento -->
+          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="16" cy="16" r="13" stroke="#1a1a1a" stroke-width="2.6"/>
+            <path d="M21 11 L17.5 17.5 L11 21 L14.5 14.5 Z" fill="#e30613"/>
+            <circle cx="16" cy="16" r="2.2" fill="#1a1a1a"/>
+          </svg>
+        </div>
+        <h3>Planeja</h3>
+        <p>Ajuda o órgão a definir o que comunicar, para quem e por quais canais.
+           Transforma necessidade de comunicação em estratégia.</p>
+      </div>
+      <div class="frente">
+        <div class="ic-wrap">
+          <!-- ícone: caneta/produção -->
+          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21 5 L27 11 L13 25 L6 27 L8 20 Z" fill="#e30613" stroke="#1a1a1a" stroke-width="2.6" stroke-linejoin="round"/>
+            <path d="M19 7 L25 13" stroke="#1a1a1a" stroke-width="2.6"/>
+            <path d="M6 27 L11 22" stroke="#1a1a1a" stroke-width="2.6"/>
+          </svg>
+        </div>
+        <h3>Produz</h3>
+        <p>Cria os textos, as artes, os vídeos, as páginas e as peças que circulam
+           nos canais oficiais — com padrão visual e editorial constante.</p>
+      </div>
+      <div class="frente">
+        <div class="ic-wrap">
+          <!-- ícone: gráfico/acompanhamento -->
+          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5 27 L27 27" stroke="#1a1a1a" stroke-width="2.6" stroke-linecap="round"/>
+            <rect x="7" y="17" width="5" height="8" rx="1.4" fill="#1a1a1a"/>
+            <rect x="14.5" y="11" width="5" height="14" rx="1.4" fill="#e30613"/>
+            <rect x="22" y="6" width="5" height="19" rx="1.4" fill="#1a1a1a"/>
+          </svg>
+        </div>
+        <h3>Acompanha</h3>
+        <p>Monitora alcance, dúvidas e repercussão, e usa esses dados para corrigir
+           a rota. O que não é medido não melhora.</p>
+      </div>
+    </div>
+
+    <div class="cabeca reveal" style="margin-top:76px;margin-bottom:32px">
+      <h2>O que uma agência digital entrega</h2>
+      <p class="lead">Na prática, a contratação coloca à disposição do órgão uma
+        operação completa — não peças soltas, mas uma estratégia.</p>
+    </div>
+
+    <div class="entregas reveal">
+      <div class="entrega">
+        <div class="ic-e">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="9" stroke="#1a1a1a" stroke-width="2.2"/>
+            <path d="M12 7 L13.3 11 L17 11 L14 13.4 L15.1 17 L12 14.7 L8.9 17 L10 13.4 L7 11 L10.7 11 Z" fill="#e30613"/>
+          </svg>
+        </div>
+        <div><h4>Estratégia e planejamento digital</h4>
+        <p>Uma estratégia completa de redes e de presença digital — não publicações
+           avulsas, mas um plano com objetivo e direção.</p></div>
+      </div>
+      <div class="entrega">
+        <div class="ic-e">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="5" width="16" height="12" rx="2" stroke="#1a1a1a" stroke-width="2.2"/>
+            <path d="M8 21 L16 21" stroke="#1a1a1a" stroke-width="2.2" stroke-linecap="round"/>
+            <circle cx="12" cy="11" r="3" fill="#e30613"/>
+          </svg>
+        </div>
+        <div><h4>Redes sociais e WhatsApp</h4>
+        <p>Calendário editorial, publicações e relacionamento nos canais oficiais
+           de resposta rápida.</p></div>
+      </div>
+      <div class="entrega">
+        <div class="ic-e">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="6" width="18" height="13" rx="2" stroke="#1a1a1a" stroke-width="2.2"/>
+            <path d="M3 10 L21 10" stroke="#1a1a1a" stroke-width="2.2"/>
+            <circle cx="6" cy="8" r="1" fill="#e30613"/>
+            <circle cx="9" cy="8" r="1" fill="#e30613"/>
+          </svg>
+        </div>
+        <div><h4>Sites e landing pages</h4>
+        <p>Páginas de campanha, de serviços, de inscrições e de informação útil
+           ao cidadão.</p></div>
+      </div>
+      <div class="entrega">
+        <div class="ic-e">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="7" width="13" height="10" rx="2" stroke="#1a1a1a" stroke-width="2.2"/>
+            <path d="M16 11 L21 8 L21 16 L16 13 Z" fill="#e30613" stroke="#1a1a1a" stroke-width="2.2" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div><h4>Cobertura digital</h4>
+        <p>Fotos, vídeos e transmissões das ações e agendas da gestão, publicadas
+           em tempo real.</p></div>
+      </div>
+      <div class="entrega">
+        <div class="ic-e">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 19 L4 5 L20 5 L20 19 Z" stroke="#1a1a1a" stroke-width="2.2" stroke-linejoin="round"/>
+            <path d="M7 14 L10 11 L13 13 L17 8" stroke="#e30613" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div><h4>Monitoramento e relatórios</h4>
+        <p>Leitura de repercussão, alcance e dúvidas, com pontos claros de ajuste.</p></div>
+      </div>
+      <div class="entrega">
+        <div class="ic-e">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="9" r="4.5" stroke="#1a1a1a" stroke-width="2.2"/>
+            <path d="M5 20 Q5 14 12 14 Q19 14 19 20" stroke="#e30613" stroke-width="2.2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div><h4>Apoio técnico e treinamento</h4>
+        <p>Softwares, equipamentos e capacitação para a equipe da secretaria.</p></div>
+      </div>
+    </div>
+
+    <div class="destaque-bloco reveal">
+      <div class="db-ic">
+        <svg viewBox="0 0 78 78" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="39" cy="39" r="37" fill="#e30613"/>
+          <path d="M22 48 L22 30 L34 24 L34 54 Z" fill="#fff"/>
+          <path d="M34 27 L34 51 L52 58 L52 20 Z" fill="#1a1a1a"/>
+          <path d="M30 52 L30 60 Q30 64 35 64 L40 64 L40 55 Z" fill="#fff"/>
+        </svg>
+      </div>
+      <div>
+        <div class="rot">O que isso significa para a gestão</div>
+        <p>Ao contratar uma agência de comunicação digital, a prefeitura passa a ter
+          à sua disposição <strong>uma equipe completa, especializada em redes
+          sociais e no mercado digital</strong>. Mais do que executar serviços
+          isolados, a contratada entrega uma <strong>estratégia completa de redes e
+          de planejamento digital</strong> — e amplia, de forma expressiva, a
+          presença do órgão público nos canais onde o cidadão está. A secretaria de
+          comunicação ganha rotina, especialização e capacidade de entrega.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PUBLICIDADE E DIGITAL ===================== -->
+<section class="secao" id="publicidade-digital">
+  <div class="wrap">
+    <div class="cabeca reveal">
+      <span class="cap-rotulo">Publicidade e Digital</span>
+      <h2>Duas funções, não duas escolhas</h2>
+      <p class="lead">Existe uma confusão comum, e ela atrapalha a contratação:
+        tratar “agência de publicidade” e “agência de comunicação digital” como se
+        fossem a mesma coisa, ou como se o gestor tivesse de escolher entre uma e
+        outra.</p>
+      <p>Não é uma escolha. São <strong>duas funções diferentes</strong> da
+        comunicação pública. Cada contratação é única e atende a um aspecto distinto
+        da comunicação. Entender o que cabe a cada uma é o que permite ao gestor
+        descrever corretamente o que precisa — e é justamente aí que a maioria dos
+        problemas de contratação começa ou se evita.</p>
+    </div>
+
+    <div class="duas reveal">
+      <div class="func pub">
+        <span class="selo">PUBLICIDADE</span>
+        <h3>Campanha e veiculação</h3>
+        <p class="desc">Trabalha a mensagem que precisa alcançar muita gente ao
+           mesmo tempo. É o território da campanha.</p>
+        <dl>
+          <div><dt>O QUE FAZ</dt><dd>Concebe campanhas, cria peças e planeja a
+            circulação da mensagem em mídia paga.</dd></div>
+          <div><dt>COMO TRABALHA</dt><dd>Por projeto, com começo, meio e fim. Cada
+            campanha é um esforço concentrado de alcance.</dd></div>
+          <div><dt>QUANDO O GESTOR PRECISA</dt><dd>Vacinação, mobilização pública,
+            prevenção, datas e causas que exigem chegar rápido a toda a população.</dd></div>
+        </dl>
+      </div>
+      <div class="func dig">
+        <span class="selo">COMUNICAÇÃO DIGITAL</span>
+        <h3>Canais e rotina</h3>
+        <p class="desc">Trabalha a presença contínua nos canais próprios do órgão.
+           Não é campanha; é operação que não para.</p>
+        <dl>
+          <div><dt>O QUE FAZ</dt><dd>Opera redes sociais, portal, landing pages e
+            WhatsApp; produz conteúdo; monitora; responde ao cidadão.</dd></div>
+          <div><dt>COMO TRABALHA</dt><dd>De forma contínua, todos os dias. O valor
+            está na constância, não no pico.</dd></div>
+          <div><dt>QUANDO O GESTOR PRECISA</dt><dd>Sempre que a gestão precisa estar
+            presente, responder com agilidade e manter o cidadão informado no dia
+            a dia.</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="linha-corte reveal">
+      <div class="rot">A linha que separa as duas</div>
+      <div class="frase">É a <span class="tarja">mídia paga</span></div>
+      <p>Quando o objeto envolve compra de mídia e impulsionamento de campanha, o
+        assunto pertence ao campo da publicidade. Quando o objeto é a operação
+        contínua dos canais próprios, conteúdo e relacionamento, pertence ao campo
+        da comunicação digital. Misturar as duas naturezas em um mesmo contrato é a
+        origem mais comum de insegurança jurídica.</p>
+    </div>
+
+    <div class="coexistem reveal">
+      <p><strong>As duas funções coexistem.</strong> Uma gestão madura costuma
+        precisar das duas, em momentos diferentes: a campanha para alcançar, a
+        operação digital para sustentar. A Área Comunicação atua nas duas frentes —
+        como agência de publicidade e como agência de serviços de comunicação
+        digital — e é por conhecer os dois territórios por dentro que pode ajudar
+        o gestor a colocar cada necessidade no seu lugar.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== COMO CONTRATAR ===================== -->
+<section class="secao branca" id="como-contratar">
+  <div class="wrap">
+    <div class="cabeca reveal">
+      <span class="cap-rotulo">Como contratar</span>
+      <h2>A contratação começa no objeto</h2>
+      <p class="lead">Quando uma prefeitura decide contratar comunicação digital, a
+        primeira pergunta costuma ser “qual lei usar?”. É a pergunta errada para
+        começar.</p>
+      <p>A pergunta certa é: <strong>o que, exatamente, será contratado?</strong>
+        A lei aplicável não se escolhe primeiro — ela decorre do objeto. Um objeto
+        bem descrito conduz naturalmente à trilha legal correta. Um objeto vago é a
+        raiz de quase todo problema posterior, no edital e na execução do contrato.</p>
+    </div>
+
+    <div class="contrat reveal">
+      <div class="cpasso">
+        <div class="cn">1</div>
+        <h4>Defina o objeto</h4>
+        <p>Campanha? Operação de canais? Portal? Conteúdo? Quanto mais preciso,
+           melhor.</p>
+      </div>
+      <div class="cpasso">
+        <div class="cn">2</div>
+        <h4>Identifique a natureza</h4>
+        <p>O objeto é, no essencial, publicidade ou operação digital? O nome do
+           fornecedor não responde — quem responde são as entregas.</p>
+      </div>
+      <div class="cpasso">
+        <div class="cn">3</div>
+        <h4>Escolha a trilha legal</h4>
+        <p>A natureza do objeto define o tratamento jurídico aplicável.</p>
+      </div>
+      <div class="cpasso">
+        <div class="cn">4</div>
+        <h4>Licite e fiscalize</h4>
+        <p>Com o escopo claro, a administração aplica a base correta e fiscaliza
+           com segurança.</p>
+      </div>
+    </div>
+
+    <div class="cabeca reveal" style="margin-top:70px;margin-bottom:8px">
+      <h3 style="font-size:clamp(1.35rem,2.6vw,1.9rem)">A trilha legal de cada objeto</h3>
+      <p style="margin-top:14px">Para a maior parte das contratações de comunicação
+        pública, o gestor trabalha dentro de duas referências legais: a
+        <strong>Lei nº 14.133/2021</strong> (Lei de Licitações e Contratos), regra
+        geral; e a <strong>Lei nº 12.232/2010</strong>, regime específico para
+        serviços de publicidade prestados por agências. Os textos oficiais estão
+        no capítulo de Fontes.</p>
+    </div>
+
+    <table class="tabela-leg reveal">
+      <thead>
+        <tr><th>Tipo de objeto</th><th>Do que se trata</th><th>Trilha legal</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Publicidade</td>
+          <td>Campanha, criação publicitária, mídia paga</td>
+          <td class="lei">Lei 12.232/2010, com a 14.133/2021 no que couber</td>
+        </tr>
+        <tr>
+          <td>Operação digital contínua</td>
+          <td>Redes, portal, conteúdo, WhatsApp, monitoramento</td>
+          <td class="lei">Lei 14.133/2021, com escopo bem delimitado</td>
+        </tr>
+        <tr>
+          <td>Comunicação digital ampla</td>
+          <td>Canais próprios, relacionamento, cobertura, dados</td>
+          <td class="lei">Lei 14.133/2021</td>
+        </tr>
+        <tr>
+          <td>Estrutura e apoio técnico</td>
+          <td>Softwares, equipamentos, foto, vídeo, treinamento</td>
+          <td class="lei">Lei 14.133/2021, com entregas detalhadas</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="regra-pratica reveal">
+      <div class="rp-ic">
+        <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="18" cy="18" r="17" fill="#e30613"/>
+          <path d="M18 9 L18 21" stroke="#fff" stroke-width="3.4" stroke-linecap="round"/>
+          <circle cx="18" cy="26.5" r="2.1" fill="#fff"/>
+        </svg>
+      </div>
+      <p><strong>A regra prática:</strong> quanto menor a mistura de naturezas em
+        um mesmo contrato, menor o risco jurídico. Cada objeto no seu lugar.</p>
+    </div>
+
+    <div class="tec-preco reveal">
+      <div class="eyebrow claro">Como avaliar as propostas</div>
+      <h3>A avaliação deve considerar a técnica, não só o preço</h3>
+      <p>O modelo de edital de comunicação digital construído por entidades do setor
+        — disponível no capítulo de Fontes — adota o critério de julgamento por
+        <strong>melhor técnica</strong>. Na prática, isso significa que o órgão não
+        decide pelo menor valor: ele analisa o raciocínio de cada concorrente diante
+        do problema, a estratégia proposta, a solução de comunicação apresentada e a
+        capacidade real de atendimento. Vence quem demonstra entender melhor a
+        necessidade pública — não quem apenas cobra menos.</p>
+      <div class="grande">O melhor contrato <span class="tarja">não é o mais barato</span></div>
+      <p>Um serviço técnico contratado apenas pelo menor preço tende a entregar
+        abaixo do necessário, e o custo dessa escolha reaparece — em retrabalho, em
+        comunicação que não funciona, em ruído que a gestão não consegue conter.
+        O melhor custo é o que responde ao objetivo público certo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== VANTAGENS ===================== -->
+<section class="secao" id="vantagens">
+  <div class="wrap">
+    <div class="cabeca reveal">
+      <span class="cap-rotulo">Vantagens</span>
+      <h2>O que muda quando a comunicação é estruturada</h2>
+      <p class="lead">A diferença entre uma comunicação improvisada e uma comunicação
+        estruturada aparece em quatro pontos concretos.</p>
+    </div>
+
+    <div class="comp-cab reveal">
+      <span></span><span>Comunicação improvisada</span><span>Com agência digital</span>
+    </div>
+    <div class="compara reveal">
+      <div class="linha-comp">
+        <div class="aspecto">Velocidade</div>
+        <div class="sem">Resposta lenta, dispersa entre vários setores.</div>
+        <div class="com">Comunicação com ritmo, reação ágil no dia a dia.</div>
+      </div>
+      <div class="linha-comp">
+        <div class="aspecto">Organização</div>
+        <div class="sem">A secretaria acumula funções e improvisa equipe.</div>
+        <div class="com">Operação estruturada, com rotina e especialização.</div>
+      </div>
+      <div class="linha-comp">
+        <div class="aspecto">Estrutura técnica</div>
+        <div class="sem">Equipamentos e softwares viram gargalo.</div>
+        <div class="com">A contratada assume a base técnica de produção.</div>
+      </div>
+      <div class="linha-comp">
+        <div class="aspecto">Acompanhamento</div>
+        <div class="sem">Difícil saber o que funcionou.</div>
+        <div class="com">Resultados medidos e ajustados com clareza.</div>
+      </div>
+    </div>
+
+    <p class="reveal" style="margin-top:26px;max-width:66ch">O ganho não fica só na
+      gestão. Chega ao cidadão: informação mais clara, resposta mais rápida, mais
+      uso efetivo dos serviços públicos, menos espaço para o boato e mais confiança
+      na relação com a prefeitura.</p>
+
+    <div class="servir reveal">
+      <div class="frase">Comunicar melhor é <span class="tarja">servir melhor</span></div>
+    </div>
+
+    <div class="cabeca reveal" style="margin-top:78px;margin-bottom:32px">
+      <h2>Erros comuns na contratação</h2>
+      <p class="lead">Estes são os erros que mais aparecem — e que um processo bem
+        conduzido evita.</p>
+    </div>
+
+    <div class="erros reveal">
+      <div class="erro">
+        <div class="x">×</div>
+        <div><h4>Objeto vago</h4>
+        <p>“Serviços de comunicação” diz pouco. Um objeto sem entregas precisas
+           gera edital frágil e contrato difícil de fiscalizar.</p></div>
+      </div>
+      <div class="erro">
+        <div class="x">×</div>
+        <div><h4>Contratar serviço técnico só pelo menor preço</h4>
+        <p>Comunicação deve ser avaliada por técnica. Reduzir a escolha ao valor é
+           contratar abaixo do que a gestão precisa.</p></div>
+      </div>
+      <div class="erro">
+        <div class="x">×</div>
+        <div><h4>Misturar publicidade e operação digital</h4>
+        <p>Naturezas diferentes pedem trilhas legais diferentes. Juntá-las no mesmo
+           contrato é a fonte mais comum de insegurança jurídica.</p></div>
+      </div>
+      <div class="erro">
+        <div class="x">×</div>
+        <div><h4>Confundir volume com resultado</h4>
+        <p>Mais publicações não é melhor comunicação. O que importa é se a
+           informação chega, é entendida e gera o efeito pretendido.</p></div>
+      </div>
+      <div class="erro">
+        <div class="x">×</div>
+        <div><h4>Tratar comunicação como gasto, não como serviço</h4>
+        <p>Comunicação pública é parte da prestação de serviço ao cidadão — e o
+           direito à informação é um princípio da administração.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FONTES ===================== -->
+<section class="secao branca" id="fontes">
+  <div class="wrap">
+    <div class="cabeca reveal">
+      <span class="cap-rotulo">Fontes</span>
+      <h2>Fontes e modelos oficiais</h2>
+      <p class="lead">Referências oficiais para o gestor que vai conduzir uma
+        contratação de comunicação.</p>
+    </div>
+
+    <div class="aviso-fonte reveal">
+      <div class="av-ic">
+        <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="18" cy="18" r="17" fill="#e30613"/>
+          <path d="M18 9 L18 21" stroke="#fff" stroke-width="3.4" stroke-linecap="round"/>
+          <circle cx="18" cy="26.5" r="2.1" fill="#fff"/>
+        </svg>
+      </div>
+      <p><strong>O edital é sempre um ato da administração pública.</strong> Os
+        modelos abaixo são referências técnicas valiosas para estruturar o processo
+        — não substituem a análise da procuradoria jurídica do órgão, que é quem
+        adapta qualquer modelo à realidade e à legislação aplicável à contratação
+        concreta.</p>
+    </div>
+
+    <div class="grupo-fonte reveal">
+      <h3>Legislação</h3>
+      <a class="link-fonte" href="https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14133.htm" target="_blank" rel="noopener">
+        <div class="lf-txt">
+          <h4>Lei nº 14.133/2021 — Lei de Licitações e Contratos</h4>
+          <p>Texto oficial no portal do Planalto · regra geral da contratação pública</p>
+        </div>
+        <span class="seta"><svg viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 13 L13 4 M6 4 H13 V11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+      <a class="link-fonte" href="https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2010/lei/l12232.htm" target="_blank" rel="noopener">
+        <div class="lf-txt">
+          <h4>Lei nº 12.232/2010 — regime de publicidade por agências</h4>
+          <p>Texto oficial no portal do Planalto · regime específico para serviços de publicidade</p>
+        </div>
+        <span class="seta"><svg viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 13 L13 4 M6 4 H13 V11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+    </div>
+
+    <div class="grupo-fonte reveal">
+      <h3>Portais oficiais</h3>
+      <a class="link-fonte" href="https://www.gov.br/pncp/pt-br" target="_blank" rel="noopener">
+        <div class="lf-txt">
+          <h4>Portal Nacional de Contratações Públicas — PNCP</h4>
+          <p>Divulgação e acompanhamento de contratações públicas</p>
+        </div>
+        <span class="seta"><svg viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 13 L13 4 M6 4 H13 V11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+      <a class="link-fonte" href="https://www.gov.br/compras/pt-br/nllc" target="_blank" rel="noopener">
+        <div class="lf-txt">
+          <h4>Nova Lei de Licitações — Portal de Compras do Governo Federal</h4>
+          <p>Materiais de apoio e regulamentação da Lei 14.133/2021</p>
+        </div>
+        <span class="seta"><svg viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 13 L13 4 M6 4 H13 V11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+    </div>
+
+    <div class="grupo-fonte reveal">
+      <h3>Modelos de edital</h3>
+      <a class="link-fonte" href="modelos.html">
+        <div class="lf-txt">
+          <h4>Modelos de edital para contratação de comunicação digital</h4>
+          <p>Página com os modelos disponíveis — ABRADI e referências do setor</p>
+        </div>
+        <span class="seta"><svg viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 13 L13 4 M6 4 H13 V11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </a>
+    </div>
+
+    <div class="cta-fontes reveal">
+      <div class="ct-txt">
+        <h3>Modelos de edital para download</h3>
+        <p>Reunimos os modelos de referência numa página específica para consulta.</p>
+      </div>
+      <a href="modelos.html">Ver modelos de edital</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== RODAPÉ ===================== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-marca">
+        <img src="data:image/png;base64,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" alt="Área Comunicação">
+        <h3>Área Comunicação</h3>
+        <p>Há 20 anos comunicando com alma. Comunicação pública para prefeituras,
+           conselhos de classe e autarquias.</p>
+      </div>
+      <div class="foot-cont">
+        <strong style="color:#fff">Fale com a Área</strong><br>
+        <a href="https://naarea.com" target="_blank" rel="noopener">naarea.com</a><br>
+        <a href="mailto:contato@areacom.com.br">contato@areacom.com.br</a><br>
+        Rua Uruana, 93 — Vila Mariana, São Paulo SP<br>
+        +55 11 5594.0288
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>© 2026 Área Comunicação. Material de orientação a gestores públicos.</span>
+      <span>Agência digital na comunicação pública</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const burger=document.getElementById('burger');
+const menu=document.getElementById('menu');
+burger.addEventListener('click',()=>menu.classList.toggle('aberto'));
+menu.querySelectorAll('a').forEach(a=>
+  a.addEventListener('click',()=>menu.classList.remove('aberto')));
+
+const io=new IntersectionObserver((ents)=>{
+  ents.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target)}});
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+const secs=document.querySelectorAll('section[id]');
+const links=document.querySelectorAll('.menu a');
+const spy=new IntersectionObserver((ents)=>{
+  ents.forEach(e=>{
+    if(e.isIntersecting){
+      links.forEach(l=>l.classList.toggle('ativo',
+        l.getAttribute('href')==='#'+e.target.id));
+    }
+  });
+},{rootMargin:'-45% 0px -50% 0px'});
+secs.forEach(s=>spy.observe(s));
+</script>
+</body>
+</html>
