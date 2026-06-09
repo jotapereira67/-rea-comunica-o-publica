@@ -404,10 +404,10 @@ footer{background:#0e0e0e;color:#bdb9b2;padding:46px 0 30px}
   .trilha{grid-template-columns:repeat(3,1fr)}
   .stats{grid-template-columns:repeat(2,1fr)}
   .fluxo{grid-template-columns:1fr;gap:12px}
-  .passo{display:grid;grid-template-columns:58px 1fr;grid-template-rows:auto auto;gap:8px 16px;align-items:start;padding:0;width:100%;min-width:0}
-  .passo .bola{grid-column:1;grid-row:1 / span 2;margin-bottom:0;align-self:start}
-  .passo h4{grid-column:2;grid-row:1;min-width:0}
-  .passo p{grid-column:2;grid-row:2;min-width:0;word-break:normal;overflow-wrap:anywhere;white-space:normal}
+  .passo{display:grid;grid-template-columns:58px 1fr;grid-template-areas:"bola titulo" "bola texto";gap:8px 16px;padding:0;width:100%}
+  .passo .bola{grid-area:bola;margin-bottom:0;align-self:start}
+  .passo h4{grid-area:titulo;min-width:0}
+  .passo p{grid-area:texto;min-width:0;word-break:normal;overflow-wrap:anywhere}
   .passo:not(:last-child)::after{display:none}
   .frentes{grid-template-columns:1fr}
   .entregas{grid-template-columns:1fr}
